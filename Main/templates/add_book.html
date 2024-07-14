@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book Form</title>
+</head>
+<body>
+
+<h2>Add Book</h2>
+
+<form method="POST" action="{% url 'add_book' %}" style="max-width: 500px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9;">
+    {% csrf_token %}
+    
+    <label for="title" style="margin-bottom: 10px; display: block;">Title:</label>
+    <input type="text" id="title" name="title" value="{{ title }}" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 3px; box-sizing: border-box;">
+    
+    <label for="authors" style="margin-bottom: 10px; display: block;">Authors:</label>
+    <input type="text" id="authors" name="authors" value="{{ authors }}" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 3px; box-sizing: border-box;">
+    
+    <label for="publisher" style="margin-bottom: 10px; display: block;">Publisher:</label>
+    <input type="text" id="publisher" name="publisher" value="{{ publisher }}" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 3px; box-sizing: border-box;">
+    
+    <label for="published_date" style="margin-bottom: 10px; display: block;">Published Date:</label>
+    <input type="date" id="published_date" name="published_date" value="{{ published_date }}" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 3px; box-sizing: border-box;">
+    
+    <label for="description" style="margin-bottom: 10px; display: block;">Description:</label>
+    <textarea id="description" name="description" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 3px; box-sizing: border-box;">{{ description }}</textarea>
+    
+    <label for="isbn_13" style="margin-bottom: 10px; display: block;">ISBN-13:</label>
+    <input type="text" id="isbn_13" name="isbn_13" value="{{ isbn_13 }}" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 3px; box-sizing: border-box;">
+    
+    <label for="page_count" style="margin-bottom: 10px; display: block;">Page Count:</label>
+    <input type="number" id="page_count" name="page_count" value="{{ page_count }}" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 3px; box-sizing: border-box;">
+    
+    <label for="thumbnail_url" style="margin-bottom: 10px; display: block;">Thumbnail URL:</label>
+    <input type="url" id="thumbnail_url" name="thumbnail_url" value="{{ thumbnail_url }}" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 3px; box-sizing: border-box;">
+
+    <label for="available" style="margin-bottom: 10px; display: block;">Available:</label>
+    <input type="number" id="available" name="available" value="{{ available }}" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 3px; box-sizing: border-box;">
+    
+    <button type="submit" style="background-color: #4CAF50; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">Add Book</button>
+</form>
+
+</body>
+</html>
