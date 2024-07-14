@@ -1,3 +1,4 @@
+from math import e
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
@@ -35,7 +36,7 @@ def login(request):
         if user is not None:
             auth.login(request, user)
             print(username, password)
-            return redirect('mainScreen')
+            return redirect(mainScreen)
         else:
             messages.info(request, "Invalid username or password")
             return redirect(login)
@@ -51,17 +52,22 @@ def signup(request):
         if User.objects.filter(username=username).exists():
             messages.info(
                 request, "Username already exists. Try with different username.")
-            return redirect('signup')
+            return redirect(signup)
         else:
             user = User.objects.create_user(
                 username=username, email=email, password=password)
             user.set_password(password)
             user.save()
-            return redirect(login)
+            if user is not None:
+                auth.login(request, user)
+                print(username, password)
+                return redirect(mainScreen)
+            else:
+                return redirect(signup)
     else:
         return render(request, 'signup.html')
 
 
 def logout(request):
     auth_logout(request)
-    return redirect(request ,'mainScreen')
+    return redirect(mainScreen)
