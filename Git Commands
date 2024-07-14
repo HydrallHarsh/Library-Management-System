@@ -1,0 +1,9 @@
+For Pushing : -
+git init
+git add .
+git commit -m "Enter Message"
+git push -u origin main
+
+
+For Pulling: -
+git pull origin main
