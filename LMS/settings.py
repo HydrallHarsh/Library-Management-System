@@ -56,7 +56,7 @@ ROOT_URLCONF = 'LMS.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'Main/templetes')],
+        'DIRS': [os.path.join(BASE_DIR, 'Main/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
