@@ -6,4 +6,6 @@ git push -u origin main
 
 
 For Pulling: -
+git init
+git remote add origin "https://github.com/HydrallHarsh/Library-Management-System.git"
 git pull origin main
